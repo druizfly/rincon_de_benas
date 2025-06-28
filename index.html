@@ -35,6 +35,53 @@
             margin-right: 0.5rem;
             margin-top: 0.5rem;
         }
+        .zoomable {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .zoomable:hover {
+            transform: scale(1.05);
+        }
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        .image-modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .close-modal:hover {
+            opacity: 0.7;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -90,9 +137,9 @@
                             <li>Toma el desvío a la derecha hacia la <strong>"Urbanización Linsoles"</strong>.</li>
                         </ol>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                         <img src="./public/path.jpeg" alt="Mapa aéreo con la ruta correcta hacia la urbanización Linsoles" class="rounded-lg shadow-md w-full h-auto object-cover">
-                         <img src="./public/road.jpeg" alt="Señal del desvío hacia la urbanización Linsoles desde la carretera" class="rounded-lg shadow-md w-full h-auto object-cover">
+                                        <div class="grid grid-cols-2 gap-4">
+                          <img src="./public/path.jpeg" alt="Mapa aéreo con la ruta correcta hacia la urbanización Linsoles" class="rounded-lg shadow-md w-full h-auto object-cover zoomable">
+                          <img src="./public/road.jpeg" alt="Señal del desvío hacia la urbanización Linsoles desde la carretera" class="rounded-lg shadow-md w-full h-auto object-cover zoomable">
                     </div>
                 </div>
             </div>
@@ -192,8 +239,51 @@
             <p>&copy; 2025 Guía de Viaje Personalizada. ¡Que disfrutes de tu estancia en Benasque!</p>
         </div>
     </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
     
     <script>
+        // Image zoom modal functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close-modal');
+        
+        // Add click event to all zoomable images
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.classList.add('show');
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+        
+        // Close modal when clicking the X
+        closeBtn.addEventListener('click', closeModal);
+        
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
