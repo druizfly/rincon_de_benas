@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Viaje: Valle de Benasque</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: #0c4a6e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-900">
+                <span class="text-sky-600">Benasque</span> Guía
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#llegada" class="text-slate-600 hover:text-sky-600 transition">Llegada</a>
+                <a href="#actividades" class="text-slate-600 hover:text-sky-600 transition">Actividades</a>
+                <a href="#restaurantes" class="text-slate-600 hover:text-sky-600 transition">Restaurantes</a>
+            </div>
+             <div class="md:hidden">
+                <select onchange="location = this.value;" class="bg-white border border-slate-300 rounded-md p-2">
+                    <option value="#">Menú</option>
+                    <option value="#llegada">Llegada</option>
+                    <option value="#actividades">Actividades</option>
+                    <option value="#restaurantes">Restaurantes</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Tu Aventura en el Valle de Benasque</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Un resumen de las mejores recomendaciones de tu anfitrión para que disfrutes de una estancia inolvidable.</p>
+        </section>
+
+        <!-- Seccion de Llegada -->
+        <section id="llegada" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-8 text-slate-900 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-600"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                Cómo Llegar al Apartamento
+            </h2>
+            <div class="section-card">
+                 <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-700 p-4 rounded-md" role="alert">
+                  <p class="font-bold">¡Atención!</p>
+                  <p>No uses la dirección directa en Google Maps, te guiará por un camino muy estrecho. Es mejor usar Waze o seguir estas indicaciones.</p>
+                </div>
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Instrucciones Recomendadas:</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600">
+                            <li>Pon en tu navegador la dirección del <strong>Hotel Eriste</strong>.</li>
+                            <li>Una vez pases el hotel, continúa unos 100 metros.</li>
+                            <li>Toma el desvío a la derecha hacia la <strong>"Urbanización Linsoles"</strong>.</li>
+                        </ol>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                         <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Vista+Aérea+Ruta" alt="Mapa aéreo con la ruta correcta hacia la urbanización Linsoles" class="rounded-lg shadow-md w-full h-auto object-cover">
+                         <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Desvío+Linsoles" alt="Señal del desvío hacia la urbanización Linsoles desde la carretera" class="rounded-lg shadow-md w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seccion de Actividades -->
+        <section id="actividades" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-8 text-slate-900 flex items-center">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-600"><path d="m11.33 7.8-5.35 6.42a1 1 0 0 0 .78 1.63h10.48a1 1 0 0 0 .78-1.63l-5.35-6.42a1 1 0 0 0-1.56 0z"/><path d="m17 14 3 3-3 3"/><path d="m7 14-3 3 3 3"/><path d="M14 4h-4"/><path d="M15 22h-6"/></svg>
+                Actividades y Rutas Familiares
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Ponis -->
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-2">Paseo en Poni en Anima Equi</h3>
+                    <p class="text-slate-600 mb-4">Ideal para una primera experiencia ecuestre para niños. Una actividad corta, divertida y muy cerca del apartamento.</p>
+                    <div><span class="tag">Para niños 3-6 años</span><span class="tag">15 min</span><span class="tag">Desde 15€</span></div>
+                    <div class="mt-4 bg-sky-100 text-sky-800 p-3 rounded-lg"><strong>Importante:</strong> Es imprescindible reservar por teléfono (+34 606 232 101).</div>
+                </div>
+
+                <!-- Telesilla -->
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-2">Telesilla de Verano en Cerler</h3>
+                    <p class="text-slate-600 mb-4">Sube sin esfuerzo a la alta montaña para disfrutar de vistas espectaculares del Aneto y acceder a rutas de senderismo sencillas en la cima.</p>
+                     <div><span class="tag">Vistas panorámicas</span><span class="tag">Adulto: 16.70€</span><span class="tag">Infantil: 11.60€</span></div>
+                    <div class="mt-4 bg-sky-100 text-sky-800 p-3 rounded-lg"><strong>Consejo:</strong> Compra los billetes online con antelación para obtener un descuento.</div>
+                </div>
+
+                <!-- Forau de Aiguallut -->
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-2">Ruta Forau de Aiguallut</h3>
+                    <p class="text-slate-600 mb-4">Una ruta mítica del valle. El destino es una impresionante pradera con vistas al glaciar del Aneto, perfecta para un picnic.</p>
+                     <div><span class="tag">5 km (ida y vuelta)</span><span class="tag">~4.5 horas (con niños)</span><span class="tag">Fácil</span></div>
+                    <div class="mt-4 bg-amber-100 text-amber-800 p-3 rounded-lg"><strong>Logística:</strong> En verano, el coche se deja en Llanos del Hospital y se sube en autobús hasta La Besurta.</div>
+                </div>
+
+                <!-- Tres Cascadas -->
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-2">Ruta de las Tres Cascadas</h3>
+                    <p class="text-slate-600 mb-4">Un paseo familiar muy agradable para descubrir tres bonitos saltos de agua. ¡No te pierdas la cascada principal!</p>
+                     <div><span class="tag">3.25 km (ruta corta)</span><span class="tag">~2 horas</span><span class="tag">Fácil</span></div>
+                     <div class="mt-4 bg-sky-100 text-sky-800 p-3 rounded-lg"><strong>Consejo:</strong> Para la ruta corta y accesible, aparca en la carretera del Ampriu (A-2617), km 9.3.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seccion de Restaurantes -->
+        <section id="restaurantes" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold mb-8 text-slate-900 flex items-center">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 mr-3 text-sky-600"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M17 5v17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2z"/></svg>
+                Guía Gastronómica
+            </h2>
+            <div class="space-y-6">
+                <!-- El Veedor de Viandas -->
+                <div class="section-card md:flex items-start gap-6">
+                    <div class="md:w-1/3 mb-4 md:mb-0"><h3 class="text-xl font-bold">El Veedor de Viandas</h3><span class="tag bg-green-100 text-green-800">Tapas y Vinos</span></div>
+                    <div class="md:w-2/3"><p class="text-slate-600">Perfecto para un picoteo de alta calidad. No te pierdas el jamón, sus tapas creativas y la gran selección de vinos. Su formato de tapas es ideal para ir con niños.</p></div>
+                </div>
+                
+                <!-- El Bombardino -->
+                <div class="section-card md:flex items-start gap-6">
+                    <div class="md:w-1/3 mb-4 md:mb-0"><h3 class="text-xl font-bold">El Bombardino</h3><span class="tag bg-purple-100 text-purple-800">Moderno y Fusión</span></div>
+                    <div class="md:w-2/3"><p class="text-slate-600">Un gastrobar en una borda restaurada. Ofrece hamburguesas, tacos y baos en un ambiente moderno. <strong class="text-red-600">Imprescindible reservar</strong>.</p></div>
+                </div>
+
+                <!-- Braserias Cerler -->
+                 <div class="section-card md:flex items-start gap-6">
+                    <div class="md:w-1/3 mb-4 md:mb-0"><h3 class="text-xl font-bold">Brasa en Cerler</h3><span class="tag bg-orange-100 text-orange-800">Carne a la Brasa</span></div>
+                    <div class="md:w-2/3"><p class="text-slate-600">El anfitrión recomienda un asador "mítico" en el casco antiguo de Cerler. Las opciones que encajan son <strong>Brasería El Rincón</strong> (asador clásico) y <strong>La Borda del Mastín</strong> (cocina pirenaica y caza). Ambos son excelentes y requieren reserva.</p></div>
+                </div>
+                
+                <!-- El Rincón del Foc -->
+                <div class="section-card md:flex items-start gap-6">
+                    <div class="md:w-1/3 mb-4 md:mb-0"><h3 class="text-xl font-bold">El Rincón del Foc</h3><span class="tag bg-blue-100 text-blue-800">Bueno, Bonito, Barato</span></div>
+                    <div class="md:w-2/3"><p class="text-slate-600">La opción práctica y fiable. Ofrece una carta muy amplia con platos combinados, hamburguesas y comida local. Su mayor ventaja: la <strong>cocina está abierta todo el día</strong>, ideal para cenar temprano con niños.</p></div>
+                </div>
+
+                 <!-- Estrellas Michelin -->
+                <div class="section-card md:flex items-start gap-6">
+                    <div class="md:w-1/3 mb-4 md:mb-0"><h3 class="text-xl font-bold">Estrellas Michelin</h3><span class="tag bg-yellow-100 text-yellow-800">Alta Cocina</span></div>
+                    <div class="md:w-2/3">
+                        <p class="text-slate-600 mb-4">Para una ocasión especial, hay dos opciones con estrella Michelin:</p>
+                        <ul class="list-disc list-inside space-y-2">
+                           <li><strong>Restaurante Ansils:</strong> Cerca del apartamento. Menús desde 85€. Ofrecen menú infantil (avisar al reservar).</li>
+                           <li><strong>Casa Arcas:</strong> En Vilanova, algo más asequible. Menús desde 46€. También con menú infantil disponible.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-16">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p>&copy; 2025 Guía de Viaje Personalizada. ¡Que disfrutes de tu estancia en Benasque!</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
